@@ -158,6 +158,8 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 ### 3. 导出 ONNX 模型
 
+> 由于 ONNX 模型文件体积较大(约 98MB),未纳入版本控制。克隆后需自行导出,生成到 `models/resnet50_dynamic.onnx`。
+
 ```bash
 python tests/export_onnx.py
 ```
