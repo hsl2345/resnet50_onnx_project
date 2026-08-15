@@ -4,36 +4,36 @@ env/
 .venv/
 
 # Python缓存文件
-\_\_pycache\_\_/
-\*.pyc
-\*.pyo
-\*.pyd
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
 .Python
 
 # IDE配置文件
 .vscode/
 .idea/
-\*.swp
-\*.swo
+*.swp
+*.swo
 
 # 环境变量与密钥文件
 .env
 .env.local
-.env.\*.local
+.env.*.local
 
 # 系统缓存
-.DS\_Store
+.DS_Store
 Thumbs.db
 
 # 日志文件
-\*.log
+*.log
 logs/
 
 # 临时测试文件
 test.jpg
-test\*.png
+test*.png
 
 # 大模型文件
-\*.onnx
-\*.pth
-\*.bin
+*.onnx
+*.pth
+*.bin
