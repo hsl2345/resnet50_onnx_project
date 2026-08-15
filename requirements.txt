@@ -5,7 +5,10 @@ uvicorn==0.30.6
 python-multipart==0.0.9
 
 # ========== 模型与图像处理 ==========
---extra-index-url https://download.pytorch.org/whl/cpu
+# CPU 版 PyTorch：直接安装即可
+#   pip install -r requirements.txt
+# GPU 版 PyTorch（CUDA 12.1）：先单独安装再装其余依赖
+#   pip install torch==2.4.0 torchvision==0.19.0 --index-url https://download.pytorch.org/whl/cu121
 torch==2.4.0
 torchvision==0.19.0
 pillow==10.4.0

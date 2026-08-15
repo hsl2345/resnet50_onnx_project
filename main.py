@@ -4,12 +4,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.inference import router as inference_router
 
 # 初始化 FastAPI 应用
-#app = FastAPI(
-#    title="ResNet50 图像分类服务（PyTorch基线版）",
-#    version="1.0.0",
- #   description="原生 PyTorch 推理版本，作为性能对比基线"
-#)
-
 app = FastAPI(
     title="ResNet50 图像分类服务（ONNX Runtime 优化版）",
     version="2.0.0",
@@ -27,6 +21,7 @@ app.add_middleware(
 
 # 注册路由
 app.include_router(inference_router)
+
 
 # 健康检查接口
 @app.get("/health", summary="健康检查")

@@ -1,4 +1,5 @@
 # app/models/onnx_model.py
+import os
 import numpy as np
 import onnxruntime as ort
 from torchvision import transforms
@@ -33,8 +34,9 @@ class ONNXResNetClassifier:
         # 2. 配置会话选项：开启全量图优化，最大化性能
         sess_options = ort.SessionOptions()
         sess_options.graph_optimization_level = ort.GraphOptimizationLevel.ORT_ENABLE_ALL
-        # CPU 线程数，根据你的CPU核心数调整，一般设为物理核心数
-        sess_options.intra_op_num_threads = 24
+        # CPU 线程数：默认使用物理核心数，可通过环境变量 ONNX_NUM_THREADS 覆盖
+        sess_options.intra_op_num_threads = int(os.environ.get("ONNX_NUM_THREADS", os.cpu_count() or 4))
+        sess_options.inter_op_num_threads = 1
         
         # 3. 创建推理会话
         self.session = ort.InferenceSession(
